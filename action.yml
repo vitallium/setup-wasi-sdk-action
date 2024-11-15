@@ -1,12 +1,19 @@
 ---
 name: "Setup WASI SDK"
 author: "Vitaly Slobodin"
-description: "TODO"
+description: "Download and set up the WASI SDK for WebAssembly development in GitHub Actions workflows"
 inputs:
+  sdk-version-major:
+    description: "WASI SDK major version"
+    required: false
+    default: "24"
   sdk-version:
-    description: "WASI SDK version"
+    description: "WASI SDK full version"
     required: false
     default: "24.0"
 runs:
   using: "docker"
   image: "Dockerfile"
+branding:
+  color: "gray-dark"
+  icon: "archive"
