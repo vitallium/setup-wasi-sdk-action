@@ -5,13 +5,13 @@ description: "Set up the WASI SDK for WebAssembly development"
 inputs:
   sdk-version:
     description: "WASI SDK version"
-    required: true
+    required: false
     default: "24"
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.sdk-version }}
+  env:
+    SDK_VERSION: ${{ inputs.sdk-version }}
 branding:
   color: "gray-dark"
   icon: "archive"
