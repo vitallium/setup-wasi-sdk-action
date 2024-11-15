@@ -1,0 +1,12 @@
+---
+name: "Setup WASI SDK"
+author: "Vitaly Slobodin"
+description: "TODO"
+inputs:
+  sdk-version:
+    description: "WASI SDK version"
+    required: false
+    default: "24.0"
+runs:
+  using: "docker"
+  image: "Dockerfile"
