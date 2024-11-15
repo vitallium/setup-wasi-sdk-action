@@ -8,11 +8,10 @@ inputs:
     required: true
     default: "24"
 runs:
-  using: "composite"
-  steps:
-    - run: |
-        docker pull ghcr.io/webassembly/wasi-sdk:wasi-sdk-${{ inputs.sdk-version }}
-      shell: bash
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.sdk-version }}
 branding:
   color: "gray-dark"
   icon: "archive"
